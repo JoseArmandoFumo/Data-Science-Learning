@@ -240,6 +240,7 @@ DESCRIPTION: Aggregate function || What are our all time global sales?
 SELECT 
   SUM (total) AS [Total Sales],
   AVG(total) AS [Avarage Sales],
-  MAX(total) AS [Max Sale]
+  MAX(total) AS [Maximum Sale],
+  MIN(total) AS [Minimum Sale]
 FROM 
   Invoice</sql><current_tab id="13"/></tab_sql></sqlb_project>
