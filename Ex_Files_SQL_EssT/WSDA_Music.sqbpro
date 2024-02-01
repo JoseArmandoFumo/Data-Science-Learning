@@ -241,6 +241,7 @@ SELECT
   SUM (total) AS [Total Sales],
   AVG(total) AS [Avarage Sales],
   MAX(total) AS [Maximum Sale],
-  MIN(total) AS [Minimum Sale]
+  MIN(total) AS [Minimum Sale],
+  COUNT(*) AS [Count Sales]
 FROM 
   Invoice</sql><current_tab id="13"/></tab_sql></sqlb_project>
