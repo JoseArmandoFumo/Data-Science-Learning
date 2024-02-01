@@ -197,25 +197,36 @@ FROM
 WHERE
   LastName LIKE &quot;%S&quot;
 ORDER BY 
-  LastName</sql><sql name="CONCAT">/*
+  LastName</sql><sql name="CONCAT">/*
+CREATED BY: Jose A. Fumo
+CREATED DATE: 31.01.24
+WSDA Music: Sales Goal
+Description: Creating a Mailing list of US Customers
+*/
+
+SELECT
+ FirstName,
+ LastName,
+ Address,
+ FirstName ||' '||LastName ||' '|| Address || ', '|| City|| ' '||State ||' '||PostalCode AS &quot;Mailling Address&quot;,
+ LENGTH(postalCode),
+ substr(postalcode,1,5) AS [5 Digit PostalCode],
+ upper(FirstName) AS [Name in UPPER CASE],
+ lower(Lastname) AS [name in lower casa]
+FROM
+  Customer
+WHERE
+  Country = &quot;USA&quot;
+ORDER BY
+ FirstName</sql><sql name="SQL 14">/*
 CREATED BY: Jose A. Fumo
-CREATED DATE: 31.01.24
-WSDA Music: Sales Goal
-Description: Creating a Mailing list of US Customers
+CREATED DATE: 01.02.2024
+DESCRIPTION: Calculate the ages of all employees
 */
-
 SELECT
- FirstName,
- LastName,
- Address,
- FirstName ||' '||LastName ||' '|| Address || ', '|| City|| ' '||State ||' '||PostalCode AS &quot;Mailling Address&quot;,
- LENGTH(postalCode),
- substr(postalcode,1,5) AS [5 Digit PostalCode],
- upper(FirstName) AS [Name in UPPER CASE],
- lower(Lastname) AS [name in lower casa]
-FROM
-  Customer
-WHERE
-  Country = &quot;USA&quot;
-ORDER BY
- FirstName</sql><current_tab id="11"/></tab_sql></sqlb_project>
+  FirstName,
+  LastName,
+  BirthDate,
+  strftime('%Y-%m-%d',Birthdate) AS [BirthDate no TimeCode]
+FROM 
+  Employee</sql><current_tab id="12"/></tab_sql></sqlb_project>
