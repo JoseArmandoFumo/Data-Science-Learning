@@ -238,6 +238,7 @@ CREATED DATE: 01.02.2024
 DESCRIPTION: Aggregate function || What are our all time global sales?
 */
 SELECT 
-  SUM (total) AS [Total Sales]
+  SUM (total) AS [Total Sales],
+  AVG(total) AS [Avarage Sales]
 FROM 
   Invoice</sql><current_tab id="13"/></tab_sql></sqlb_project>
