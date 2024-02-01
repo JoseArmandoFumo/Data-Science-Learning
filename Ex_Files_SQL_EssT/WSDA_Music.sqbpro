@@ -227,6 +227,9 @@ SELECT
   FirstName,
   LastName,
   BirthDate,
-  strftime('%Y-%m-%d',Birthdate) AS [BirthDate no TimeCode]
+  strftime('%Y-%m-%d',Birthdate) AS [BirthDate no TimeCode],
+  strftime('%Y-%m-%d','now') - strftime('%Y-%m-%d', Birthdate) AS Age 
 FROM 
-  Employee</sql><current_tab id="12"/></tab_sql></sqlb_project>
+  Employee
+ORDER BY 
+  FirstName</sql><current_tab id="12"/></tab_sql></sqlb_project>
