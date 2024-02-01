@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?><sqlb_project><db path="C:/Users/Jose A. Fumo/Documents/Ex_Files_SQL_EssT/WSDA_Music.db" readonly="0" foreign_keys="1" case_sensitive_like="0" temp_store="0" wal_autocheckpoint="1000" synchronous="2"/><attached/><window><main_tabs open="structure browser pragmas query" current="3"/></window><tab_structure><column_width id="0" width="300"/><column_width id="1" width="0"/><column_width id="2" width="150"/><column_width id="3" width="3930"/><column_width id="4" width="0"/><expanded_item id="0" parent="1"/><expanded_item id="1" parent="1"/><expanded_item id="2" parent="1"/><expanded_item id="3" parent="1"/></tab_structure><tab_browse><current_table name="4,5:mainAlbum"/><default_encoding codec=""/><browse_table_settings><table schema="main" name="Album" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="61"/><column index="2" value="219"/><column index="3" value="59"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="Artist" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="90"/><column index="2" value="226"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="Customer" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="131"/><column index="2" value="115"/><column index="3" value="125"/><column index="4" value="300"/><column index="5" value="300"/><column index="6" value="199"/><column index="7" value="65"/><column index="8" value="149"/><column index="9" value="123"/><column index="10" value="199"/><column index="11" value="189"/><column index="12" value="282"/><column index="13" value="156"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="Employee" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="133"/><column index="2" value="111"/><column index="3" value="115"/><column index="4" value="187"/><column index="5" value="115"/><column index="6" value="195"/><column index="7" value="195"/><column index="8" value="275"/><column index="9" value="102"/><column index="10" value="65"/><column index="11" value="92"/><column index="12" value="123"/><column index="13" value="178"/><column index="14" value="178"/><column index="15" value="256"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="Genre" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="96"/><column index="2" value="172"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="Invoice" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="111"/><column index="2" value="131"/><column index="3" value="195"/><column index="4" value="300"/><column index="5" value="199"/><column index="6" value="129"/><column index="7" value="156"/><column index="8" value="187"/><column index="9" value="79"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="InvoiceLine" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="153"/><column index="2" value="111"/><column index="3" value="91"/><column index="4" value="105"/><column index="5" value="99"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="MediaType" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="145"/><column index="2" value="253"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="Playlist" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="108"/><column index="2" value="237"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="PlaylistTrack" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="108"/><column index="2" value="91"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="Track" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="91"/><column index="2" value="222"/><column index="3" value="100"/><column index="4" value="145"/><column index="5" value="96"/><column index="6" value="295"/><column index="7" value="135"/><column index="8" value="117"/><column index="9" value="105"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table></browse_table_settings></tab_browse><tab_sql><sql name="Purchased songs">/*
+CREATED BY: Jose A. Fumo
+CREATED DATE: 02.01.24
+DESCRIPTION: How many Customers purchased two songs at $0.99 each?
+ANS: 111
+*/
+SELECT 
+ *
+FROM 
+ Invoice
+WHERE 
+ total = 1.98
+ORDER BY
+ InvoiceDate</sql><sql name="Between">/*
+CREATED BY: Jose A. Fumo
+CREATED DATE: 02.01.24
+DESCRIPTION: How many Customers purchased two songs BETWEEN $1.98 and $5.00 each?
+AnS: 178
+*/
+SELECT 
+ InvoiceDate,
+ BillingAddress,
+ BillingCity,
+ total
+FROM 
+ Invoice
+WHERE 
+ total BETWEEN 1.98 and 5.00
+ORDER BY
+ InvoiceDate</sql><sql name="IN">/*
+CREATED BY: Jose A. Fumo
+CREATED DATE: 02.01.24
+DESCRIPTION: How many Invoices do we have that are exactly $1.98 or $3.96?
+Asw: 168
+*/
+SELECT 
+ InvoiceDate,
+ BillingAddress,
+ BillingCity,
+ total
+FROM
+ Invoice
+Where 
+ total IN (1.98, 3.96) 
+ORDER BY
+ InvoiceDate</sql><sql name="Analyse Text data">/*
+CREATED BY: Jose A. Fumo
+CREATED DATE: 02.01.24
+DESCRIPTION: How many Invoices were billed to Brussels, Orlando or Paris?
+Asw: 28
+*/
+SELECT
+ InvoiceDate,
+ BillingAddress,
+ BillingCity,
+ total
+FROM 
+ Invoice
+WHERE
+ BillingCity IN  ('Brussels','Orlando','Paris')
+ORDER BY
+ InvoiceDate</sql><sql name="LIKE">/*
+CREATED BY: Jose A. Fumo
+CREATED DATE: 02.01.24
+DESCRIPTION: How many Invoices were billed in cities that starts with B?
+Asw: 62
+*/
+-- % - I don't care what comes next
+SELECT
+ InvoiceDate,
+ BillingAddress,
+ BillingCity,
+ total
+FROM 
+ Invoice
+WHERE
+ BillingCity LIKE '%B%'
+ORDER BY InvoiceDate</sql><sql name="AND">/*
+CREATED BY: Jose A. Fumo
+CREATED DATE: 02.01.24
+DESCRIPTION: How many Invoices were billed on May 22, 2010 and have a total of less than 3.00?
+Asw: 124
+*/
+SELECT
+ InvoiceDate,
+ BillingCity,
+ BillingAddress,
+ total
+FROM
+ Invoice
+WHERE 
+ DATE(InvoiceDate) &gt; '2010-05-22' AND total &lt; 3.00
+ORDER BY total</sql><sql name="OR">/*
+CREATED BY: Jose A. Fumo
+CREATED DATE: 02.01.24
+DESCRIPTION: Get all Invoices who's Billing City starts with P or Starts with D?
+Asw: 56
+*/
+SELECT
+ InvoiceDate,
+ BillingCity,
+ BillingAddress,
+ total
+FROM
+ Invoice
+WHERE 
+ BillingCity LIKE 'P%' OR BillingCity LIKE 'D%'
+ORDER BY InvoiceDate</sql><sql name="Brackets Order">/*
+CREATED BY: Jose A. Fumo
+CREATED DATE: 02.01.24
+DESCRIPTION: Get all Invoices that are greater than 1.98 and from any other ciies whose names start with P or Starts with D?
+Asw: 56
+
+PEMDAS - Parentheses, Exponents, Multiplication/Division, Addition/Subtraction
+BEMDAS - Parentheses, Exponents, Multiplication/Division, Addition/Subtraction
+*/
+SELECT
+ InvoiceDate,
+ BillingCity,
+ BillingAddress,
+ total
+FROM
+ Invoice
+WHERE 
+ total &gt; 1.98 AND (BillingCity LIKE 'P%' OR BillingCity LIKE 'D%')
+ORDER BY InvoiceDate</sql><sql name="CASE">/*
+CREATED BY: Jose A. Fumo
+CREATED DATE: 02.01.24
+WSDA Music: Sales Goal
+They want as many Customers as possible to spend BETWEEN $7.00 and $15.00
+
+SALES CATEGORIES:
+Baseline Purchase: Between $0.99 and $1.99
+Low Purchase:      Between $2.00 and $6.99
+Target Purchase:   Between $7.00 and $15.00
+Top Performer:     Above $15.00
+*/
+SELECT
+ InvoiceDate,
+ BillingAddress,
+ BillingCity,
+ total,
+ CASE
+ WHEN total&lt; 2.00 THEN 'Baseline Purchase'
+ WHEN total BETWEEN 2.00 AND 6.99 THEN 'Low Purchase'
+ WHEN total BETWEEN 7.00 AND 15.00 THEN 'Target Purchase'
+ ELSE 'Top Performer'
+ END AS  PurchaseType
+FROM 
+ Invoice
+WHERE PurchaseType = 'Top Performer'
+ORDER BY
+ BillingCity	
+</sql><sql name="multipliTable">/*
+CREATED BY: Jose A. Fumo
+CREATED DATE: 29.01.24
+WSDA Music: Sales Goal
+They want as many Customers as possible to spend BETWEEN $7.00 and $15.00
+*/
+SELECT
+  e.FirstName,
+  e.LastName,
+  e.EmployeeId,
+  c.FirstName,
+  c.LastName,
+  c.SupportRepId,
+  i.CustomerId,
+  i.total
+FROM 
+  Invoice as i
+INNER JOIN
+  Customer as c
+ON 
+  i.CustomerId = c.CustomerId
+INNER JOIN
+  Employee as e
+ON 
+  c.SupportRepId = e.EmployeeId
+ORDER BY 
+  i.total
+LIMIT 10
+  
+</sql><sql name="SQL 12">/*
+CREATED BY: Jose A. Fumo
+CREATED DATE: 30.01.24
+WSDA Music: Sales Goal
+They want to know how many costumers do we have, that last name starts with S
+*/
+
+
+SELECT
+  CustomerId,
+  FirstName,
+  LastName
+FROM
+  Customer
+WHERE
+  LastName LIKE &quot;%S&quot;
+ORDER BY 
+  LastName</sql><sql name="CONCAT">/*
+CREATED BY: Jose A. Fumo
+CREATED DATE: 31.01.24
+WSDA Music: Sales Goal
+Description: Creating a Mailing list of US Customers
+*/
+
+SELECT
+ FirstName,
+ LastName,
+ Address,
+ FirstName ||' '||LastName ||' '|| Address || ', '|| City|| ' '||State ||' '||PostalCode AS &quot;Mailling Address&quot;,
+ LENGTH(postalCode),
+ substr(postalcode,1,5) AS [5 Digit PostalCode],
+ upper(FirstName) AS [Name in UPPER CASE],
+ lower(Lastname) AS [name in lower casa]
+FROM
+  Customer
+WHERE
+  Country = &quot;USA&quot;
+ORDER BY
+ FirstName</sql><current_tab id="11"/></tab_sql></sqlb_project>
