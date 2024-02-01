@@ -218,7 +218,7 @@ FROM
 WHERE
   Country = &quot;USA&quot;
 ORDER BY
- FirstName</sql><sql name="SQL 14">/*
+ FirstName</sql><sql name="DATAFORMAT">/*
 CREATED BY: Jose A. Fumo
 CREATED DATE: 01.02.2024
 DESCRIPTION: Calculate the ages of all employees
@@ -232,4 +232,12 @@ SELECT
 FROM 
   Employee
 ORDER BY 
-  FirstName</sql><current_tab id="12"/></tab_sql></sqlb_project>
+  FirstName</sql><sql name="SQL 15">/*
+CREATED BY: Jose A. Fumo
+CREATED DATE: 01.02.2024
+DESCRIPTION: Aggregate function || What are our all time global sales?
+*/
+SELECT 
+  SUM (total) AS [Total Sales]
+FROM 
+  Invoice</sql><current_tab id="13"/></tab_sql></sqlb_project>
