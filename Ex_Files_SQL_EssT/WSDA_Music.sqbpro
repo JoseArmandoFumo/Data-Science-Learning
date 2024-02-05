@@ -293,4 +293,20 @@ FROM
 GROUP BY
  BillingCountry, BillingCity
 ORDER BY
-  BillingCountry</sql><current_tab id="16"/></tab_sql></sqlb_project>
+  BillingCountry</sql><sql name="Subqueries">/*
+CREATED BY: Jose A. Fumo
+CREATED DATE: 05.02.2024
+DESCRIPTION: Subqueries | Gather data about all invoices that are less than this average?
+*/
+SELECT 
+ InvoiceDate,
+ BillingAddress,
+ BillingCity,
+ total
+FROM 
+ Invoice
+WHERE
+  total &lt;  (SELECT round(avg (total),2) from Invoice)
+ORDER BY
+  total DESC
+</sql><current_tab id="17"/></tab_sql></sqlb_project>
