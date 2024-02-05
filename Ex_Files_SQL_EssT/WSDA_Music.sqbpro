@@ -309,4 +309,17 @@ WHERE
   total &lt;  (SELECT round(avg (total),2) from Invoice)
 ORDER BY
   total DESC
-</sql><current_tab id="17"/></tab_sql></sqlb_project>
+</sql><sql name="Subquerie_select">/*
+CREATED BY: Jose A. Fumo
+CREATED DATE: 05.02.2024
+DESCRIPTION: Subqueries in the SELECT | How is each individual city performing agains the global average sales?
+*/
+SELECT 
+  BillingCity,
+  round(avg(total),2) AS [City Average],
+  (SELECT round(avg(total),2) FROM Invoice) AS [Global Average]
+ FROM 
+  Invoice 
+ GROUP BY
+   BillingCity
+</sql><current_tab id="18"/></tab_sql></sqlb_project>
