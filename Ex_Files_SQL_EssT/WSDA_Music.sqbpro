@@ -261,7 +261,7 @@ SUM(total) AS [Total  sales]
 
 FROM 
   Invoice
- group by CustomerId</sql><sql name="SQL 17">/*
+ group by CustomerId</sql><sql name="Group by">/*
 CREATED BY: Jose A. Fumo
 CREATED DATE: 06.02.2024
 DESCRIPTION: Grouping in SQL | What are the average total by cities?
@@ -273,4 +273,20 @@ SELECT
 FROM
  Invoice
 GROUP BY
-  BillingCity</sql><current_tab id="15"/></tab_sql></sqlb_project>
+  BillingCity</sql><sql name="Group by with Where">/*
+CREATED BY: Jose A. Fumo
+CREATED DATE: 06.02.2024
+DESCRIPTION: Grouping in SQL | What are the average total by city for only the cities that starts with L?
+*/
+
+SELECT
+ BillingCity,
+round(avg(total),2) AS [Average Total]
+ 
+FROM
+  Invoice
+WHERE
+  BillingCity LIKE 'L%'
+GROUP BY
+  BillingCity
+</sql><current_tab id="16"/></tab_sql></sqlb_project>
