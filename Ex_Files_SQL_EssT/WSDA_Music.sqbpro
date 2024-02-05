@@ -303,4 +303,24 @@ GROUP BY
   BillingCity
  HAVING
    avg(total) &gt; 5.00
-</sql><current_tab id="17"/></tab_sql></sqlb_project>
+ ORDER BY
+   BillingCity
+</sql><sql name="SQL 20">/*
+CREATED BY: Jose A. Fumo
+CREATED DATE: 06.02.2024
+DESCRIPTION: HAVING in SQL | What are the average invoice totals greater than $5.00 for cities that starts with B?
+*/
+
+SELECT
+  BillingCity,
+  round(avg(total),2) AS [Average Total]
+FROM
+  Invoice
+WHERE 
+  BillingCity LIKE 'B%'
+GROUP BY
+  BillingCity
+HAVING
+  avg(total) &gt; 5.0
+ORDER BY
+  BillingCity</sql><current_tab id="18"/></tab_sql></sqlb_project>
