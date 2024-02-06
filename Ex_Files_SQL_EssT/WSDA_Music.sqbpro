@@ -322,7 +322,7 @@ SELECT
   Invoice 
  GROUP BY
    BillingCity
-</sql><sql name="SQL 21">/*
+</sql><sql name="Sub_no_Aggregate">/*
 CREATED BY: Jose A. Fumo
 CREATED DATE: 05.02.2024
 DESCRIPTION: Subqueries without aggregate functions
@@ -337,4 +337,18 @@ WHERE
 	InvoiceDate &gt; 
 	(SELECT InvoiceDate FROM Invoice WHERE InvoiceId = 251)
 ORDER BY 
-  BillingCity</sql><current_tab id="19"/></tab_sql></sqlb_project>
+  BillingCity</sql><sql name="SQL 22">/*
+CREATED BY: Jose A. Fumo
+CREATED DATE: 05.02.2024
+DESCRIPTION: Returning multipli values from a subquery
+*/
+SELECT
+  InvoiceDate,
+  BillingAddress,
+  BillingCity
+FROM
+	Invoice
+WHERE 
+	InvoiceDate IN 
+(SELECT InvoiceDate FROM Invoice WHERE InvoiceId IN (251, 252, 254))
+</sql><current_tab id="20"/></tab_sql></sqlb_project>
