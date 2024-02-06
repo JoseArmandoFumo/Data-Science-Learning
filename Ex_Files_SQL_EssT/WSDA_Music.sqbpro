@@ -217,109 +217,124 @@ SUM(total) AS [Total  sales]
 
 FROM 
   Invoice
- group by CustomerId</sql><sql name="Group by">/*
-CREATED BY: Jose A. Fumo
-CREATED DATE: 06.02.2024
-DESCRIPTION: Grouping in SQL | What are the average total by cities?
-*/
-
-SELECT
-  BillingCity,
- round(avg (total),2) AS [Average Total]
-FROM
- Invoice
-GROUP BY
-  BillingCity</sql><sql name="Group by with Where">/*
-CREATED BY: Jose A. Fumo
-CREATED DATE: 06.02.2024
-DESCRIPTION: Grouping in SQL | What are the average total by city for only the cities that starts with L?
-*/
-
-SELECT
- BillingCity,
-round(avg(total),2) AS [Average Total]
- 
-FROM
-  Invoice
-WHERE
-  BillingCity LIKE 'L%'
-GROUP BY
-  BillingCity
-</sql><sql name="Group by with Having">/*
-CREATED BY: Jose A. Fumo
-CREATED DATE: 06.02.2024
-DESCRIPTION: HAVING in SQL | What are the average invoice totals greater than $5.00?
-*/
-SELECT
-  BillingCity,
-  round(avg(total),2) AS [Average Total]
-FROM
-  Invoice
-GROUP BY
-  BillingCity
- HAVING
-   avg(total) &gt; 5.00
- ORDER BY
-   BillingCity
-</sql><sql name="Group by with having and Where">/*
-CREATED BY: Jose A. Fumo
-CREATED DATE: 06.02.2024
-DESCRIPTION: HAVING in SQL | What are the average invoice totals greater than $5.00 for cities that starts with B?
-*/
-
-SELECT
-  BillingCity,
-  round(avg(total),2) AS [Average Total]
-FROM
-  Invoice
-WHERE 
-  BillingCity LIKE 'B%'
-GROUP BY
-  BillingCity
-HAVING
-  avg(total) &gt; 5.0
-ORDER BY
-  BillingCity</sql><sql name="Group by with two fields">/*
-CREATED BY: Jose A. Fumo
-CREATED DATE: 06.02.2024
-DESCRIPTION: Grouping By in more than one field at time | What are the average invoice totals by billing Country and cities?
-*/
-SELECT
-  BillingCountry,
-  BillingCity,
-  round (avg(total),2) AS [Average Total]
-FROM
-  Invoice
-GROUP BY
- BillingCountry, BillingCity
-ORDER BY
-  BillingCountry</sql><sql name="Subqueries">/*
+ group by CustomerId</sql><sql name="Group by">/*
+CREATED BY: Jose A. Fumo
+CREATED DATE: 06.02.2024
+DESCRIPTION: Grouping in SQL | What are the average total by cities?
+*/
+
+SELECT
+  BillingCity,
+ round(avg (total),2) AS [Average Total]
+FROM
+ Invoice
+GROUP BY
+  BillingCity</sql><sql name="Group by with Where">/*
+CREATED BY: Jose A. Fumo
+CREATED DATE: 06.02.2024
+DESCRIPTION: Grouping in SQL | What are the average total by city for only the cities that starts with L?
+*/
+
+SELECT
+ BillingCity,
+round(avg(total),2) AS [Average Total]
+ 
+FROM
+  Invoice
+WHERE
+  BillingCity LIKE 'L%'
+GROUP BY
+  BillingCity
+</sql><sql name="Group by with Having">/*
+CREATED BY: Jose A. Fumo
+CREATED DATE: 06.02.2024
+DESCRIPTION: HAVING in SQL | What are the average invoice totals greater than $5.00?
+*/
+SELECT
+  BillingCity,
+  round(avg(total),2) AS [Average Total]
+FROM
+  Invoice
+GROUP BY
+  BillingCity
+ HAVING
+   avg(total) &gt; 5.00
+ ORDER BY
+   BillingCity
+</sql><sql name="Group by with having and Where">/*
+CREATED BY: Jose A. Fumo
+CREATED DATE: 06.02.2024
+DESCRIPTION: HAVING in SQL | What are the average invoice totals greater than $5.00 for cities that starts with B?
+*/
+
+SELECT
+  BillingCity,
+  round(avg(total),2) AS [Average Total]
+FROM
+  Invoice
+WHERE 
+  BillingCity LIKE 'B%'
+GROUP BY
+  BillingCity
+HAVING
+  avg(total) &gt; 5.0
+ORDER BY
+  BillingCity</sql><sql name="Group by with two fields">/*
+CREATED BY: Jose A. Fumo
+CREATED DATE: 06.02.2024
+DESCRIPTION: Grouping By in more than one field at time | What are the average invoice totals by billing Country and cities?
+*/
+SELECT
+  BillingCountry,
+  BillingCity,
+  round (avg(total),2) AS [Average Total]
+FROM
+  Invoice
+GROUP BY
+ BillingCountry, BillingCity
+ORDER BY
+  BillingCountry</sql><sql name="Subqueries">/*
+CREATED BY: Jose A. Fumo
+CREATED DATE: 05.02.2024
+DESCRIPTION: Subqueries | Gather data about all invoices that are less than this average?
+*/
+SELECT 
+ InvoiceDate,
+ BillingAddress,
+ BillingCity,
+ total
+FROM 
+ Invoice
+WHERE
+  total &lt;  (SELECT round(avg (total),2) from Invoice)
+ORDER BY
+  total DESC
+</sql><sql name="Subquerie_select">/*
+CREATED BY: Jose A. Fumo
+CREATED DATE: 05.02.2024
+DESCRIPTION: Subqueries in the SELECT | How is each individual city performing agains the global average sales?
+*/
+SELECT 
+  BillingCity,
+  round(avg(total),2) AS [City Average],
+  (SELECT round(avg(total),2) FROM Invoice) AS [Global Average]
+ FROM 
+  Invoice 
+ GROUP BY
+   BillingCity
+</sql><sql name="SQL 21">/*
 CREATED BY: Jose A. Fumo
 CREATED DATE: 05.02.2024
-DESCRIPTION: Subqueries | Gather data about all invoices that are less than this average?
+DESCRIPTION: Subqueries without aggregate functions
 */
 SELECT 
- InvoiceDate,
- BillingAddress,
- BillingCity,
- total
+  InvoiceDate,
+  BillingAddress,
+  BillingCity
 FROM 
- Invoice
+  Invoice
 WHERE
-  total &lt;  (SELECT round(avg (total),2) from Invoice)
-ORDER BY
-  total DESC
-</sql><sql name="Subquerie_select">/*
-CREATED BY: Jose A. Fumo
-CREATED DATE: 05.02.2024
-DESCRIPTION: Subqueries in the SELECT | How is each individual city performing agains the global average sales?
-*/
-SELECT 
-  BillingCity,
-  round(avg(total),2) AS [City Average],
-  (SELECT round(avg(total),2) FROM Invoice) AS [Global Average]
- FROM 
-  Invoice 
- GROUP BY
-   BillingCity
-</sql><current_tab id="18"/></tab_sql></sqlb_project>
+	InvoiceDate &gt; 
+	(SELECT InvoiceDate FROM Invoice WHERE InvoiceId = 251)
+ORDER BY 
+  BillingCity</sql><current_tab id="19"/></tab_sql></sqlb_project>
