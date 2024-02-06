@@ -337,7 +337,7 @@ WHERE
 	InvoiceDate &gt; 
 	(SELECT InvoiceDate FROM Invoice WHERE InvoiceId = 251)
 ORDER BY 
-  BillingCity</sql><sql name="SQL 22">/*
+  BillingCity</sql><sql name="sub_mult_values">/*
 CREATED BY: Jose A. Fumo
 CREATED DATE: 05.02.2024
 DESCRIPTION: Returning multipli values from a subquery
@@ -351,4 +351,24 @@ FROM
 WHERE 
 	InvoiceDate IN 
 (SELECT InvoiceDate FROM Invoice WHERE InvoiceId IN (251, 252, 254))
-</sql><current_tab id="20"/></tab_sql></sqlb_project>
+</sql><sql name="DISTINT">/*
+CREATED BY: Jose A. Fumo
+CREATED DATE: 05.02.2024
+DESCRIPTION: Subqueries and DISTINCT | Which tracks are not selling?
+*/
+SELECT 
+  TrackId,
+  Composer,
+  Name
+ FROM 
+  Track
+ WHERE
+   TrackId
+NOT IN
+(SELECT
+  DISTINCT
+  TrackId
+FROM 
+ InvoiceLine
+ORDER BY
+ TrackId)</sql><current_tab id="21"/></tab_sql></sqlb_project>
