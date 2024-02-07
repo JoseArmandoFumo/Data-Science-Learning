@@ -406,13 +406,17 @@ ORDER BY
  SELECT
    lower(FirstName) AS [Name in Lower Case]
  FROM 
-   Employee  */
+   Employee  
 --6. Get unique DEPARTMENT from employee table
 SELECT 
 	DISTINCT
 	Title
- FROM Employee
-
+ FROM Employee */
+-- 7. Select first 3 characters of FIRST_NAME from EMPLOYEE
+SELECT
+  substr(firstname, 1, 3)
+FROM 
+ Employee
 
 
 
