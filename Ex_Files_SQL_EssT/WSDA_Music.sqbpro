@@ -429,11 +429,19 @@ WHERE
 SELECT
   rtrim(FirstName) AS [Whitout white Space]
 FROM 
-  Employee  */
+  Employee  
 --10. Get FIRST_NAME from employee table after removing white spaces from left side
 SELECT
   ltrim (FirstName) AS [WITHOUT LTRIM]
 FROM
   Employee
 ORDER BY 
- FirstName </sql><current_tab id="22"/></tab_sql></sqlb_project>
+ FirstName  */
+ --11. Get length of FIRST_NAME from employee table
+SELECT
+ FirstName,
+ length(firstname) AS [Lenght of First Name]
+FROM
+ Employee
+ORDER BY 
+  FirstName</sql><current_tab id="22"/></tab_sql></sqlb_project>
