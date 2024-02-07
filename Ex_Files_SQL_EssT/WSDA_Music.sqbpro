@@ -424,9 +424,16 @@ SELECT
 FROM
 Employee
 WHERE
-  FirstName = 'Robert'  */
+  FirstName = 'Robert'  
 -- 9. Get FIRST_NAME from employee table after removing white spaces from right side
 SELECT
   rtrim(FirstName) AS [Whitout white Space]
 FROM 
-  Employee</sql><current_tab id="22"/></tab_sql></sqlb_project>
+  Employee  */
+--10. Get FIRST_NAME from employee table after removing white spaces from left side
+SELECT
+  ltrim (FirstName) AS [WITHOUT LTRIM]
+FROM
+  Employee
+ORDER BY 
+ FirstName </sql><current_tab id="22"/></tab_sql></sqlb_project>
