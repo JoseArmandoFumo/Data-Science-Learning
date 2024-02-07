@@ -401,12 +401,17 @@ FROM
   FROM 
    Employee
 ORDER BY 
- FirstName  */
+ FirstName  
 --5. Get First_Name from employee table in lower case
  SELECT
    lower(FirstName) AS [Name in Lower Case]
  FROM 
-   Employee
+   Employee  */
+--6. Get unique DEPARTMENT from employee table
+SELECT 
+	DISTINCT
+	Title
+ FROM Employee
 
 
 
