@@ -394,15 +394,19 @@ FirstName
 SELECT 
  FirstName AS [Employee Name]
 FROM
- Employee  */
+ Employee 
  -- 4. Get First_Name from employee table in upper case
  SELECT 
    upper (FirstName)
   FROM 
    Employee
 ORDER BY 
- FirstName
- 
+ FirstName  */
+--5. Get First_Name from employee table in lower case
+ SELECT
+   lower(FirstName) AS [Name in Lower Case]
+ FROM 
+   Employee
 
 
 
