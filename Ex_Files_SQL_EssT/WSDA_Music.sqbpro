@@ -416,10 +416,15 @@ SELECT
 SELECT
   substr(firstname, 1, 3)
 FROM 
- Employee */
--- 8. Get position of 'o' in name 'John' from employee table
+ Employee 
+-- 8. Get position of 'o' in name 'Robert' from employee table */
 SELECT
-  instr('John' , &quot;o&quot;) AS [position]
+ FirstName,
+ instr (FirstName, 'o') As [Position]
+FROM
+Employee
+WHERE
+  FirstName = 'Robert'
 
 
 
