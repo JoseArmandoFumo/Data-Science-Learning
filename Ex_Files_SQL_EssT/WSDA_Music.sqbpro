@@ -389,12 +389,19 @@ SELECT
 FROM
  Employee
 ORDER BY 
-FirstName   */
+FirstName   
 -- 3. Get First_Name from employee table using alias name “Employee Name”
 SELECT 
  FirstName AS [Employee Name]
 FROM
- Employee
+ Employee  */
+ -- 4. Get First_Name from employee table in upper case
+ SELECT 
+   upper (FirstName)
+  FROM 
+   Employee
+ORDER BY 
+ FirstName
  
 
 
