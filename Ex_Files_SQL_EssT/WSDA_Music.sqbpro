@@ -322,53 +322,62 @@ SELECT
   Invoice 
  GROUP BY
    BillingCity
-</sql><sql name="Sub_no_Aggregate">/*
+</sql><sql name="Sub_no_Aggregate">/*
+CREATED BY: Jose A. Fumo
+CREATED DATE: 05.02.2024
+DESCRIPTION: Subqueries without aggregate functions
+*/
+SELECT 
+  InvoiceDate,
+  BillingAddress,
+  BillingCity
+FROM 
+  Invoice
+WHERE
+	InvoiceDate &gt; 
+	(SELECT InvoiceDate FROM Invoice WHERE InvoiceId = 251)
+ORDER BY 
+  BillingCity</sql><sql name="sub_mult_values">/*
+CREATED BY: Jose A. Fumo
+CREATED DATE: 05.02.2024
+DESCRIPTION: Returning multipli values from a subquery
+*/
+SELECT
+  InvoiceDate,
+  BillingAddress,
+  BillingCity
+FROM
+	Invoice
+WHERE 
+	InvoiceDate IN 
+(SELECT InvoiceDate FROM Invoice WHERE InvoiceId IN (251, 252, 254))
+</sql><sql name="DISTINT">/*
+CREATED BY: Jose A. Fumo
+CREATED DATE: 05.02.2024
+DESCRIPTION: Subqueries and DISTINCT | Which tracks are not selling?
+*/
+SELECT 
+  TrackId,
+  Composer,
+  Name
+ FROM 
+  Track
+ WHERE
+   TrackId
+NOT IN
+(SELECT
+  DISTINCT
+  TrackId
+FROM 
+ InvoiceLine
+ORDER BY
+ TrackId)</sql><sql name="SQL 24">/*
 CREATED BY: Jose A. Fumo
-CREATED DATE: 05.02.2024
-DESCRIPTION: Subqueries without aggregate functions
+CREATED DATE: 07.02.2024
+DESCRIPTION: Pratice || Exercises
 */
-SELECT 
-  InvoiceDate,
-  BillingAddress,
-  BillingCity
-FROM 
-  Invoice
-WHERE
-	InvoiceDate &gt; 
-	(SELECT InvoiceDate FROM Invoice WHERE InvoiceId = 251)
-ORDER BY 
-  BillingCity</sql><sql name="sub_mult_values">/*
-CREATED BY: Jose A. Fumo
-CREATED DATE: 05.02.2024
-DESCRIPTION: Returning multipli values from a subquery
-*/
+--1. Get all employee details from the employee table
 SELECT
-  InvoiceDate,
-  BillingAddress,
-  BillingCity
+ *
 FROM
-	Invoice
-WHERE 
-	InvoiceDate IN 
-(SELECT InvoiceDate FROM Invoice WHERE InvoiceId IN (251, 252, 254))
-</sql><sql name="DISTINT">/*
-CREATED BY: Jose A. Fumo
-CREATED DATE: 05.02.2024
-DESCRIPTION: Subqueries and DISTINCT | Which tracks are not selling?
-*/
-SELECT 
-  TrackId,
-  Composer,
-  Name
- FROM 
-  Track
- WHERE
-   TrackId
-NOT IN
-(SELECT
-  DISTINCT
-  TrackId
-FROM 
- InvoiceLine
-ORDER BY
- TrackId)</sql><current_tab id="21"/></tab_sql></sqlb_project>
+Employee</sql><current_tab id="22"/></tab_sql></sqlb_project>
