@@ -417,15 +417,16 @@ SELECT
   substr(firstname, 1, 3)
 FROM 
  Employee 
--- 8. Get position of 'o' in name 'Robert' from employee table */
+-- 8. Get position of 'o' in name 'Robert' from employee table 
 SELECT
  FirstName,
  instr (FirstName, 'o') As [Position]
 FROM
 Employee
 WHERE
-  FirstName = 'Robert'
-
-
-
-</sql><current_tab id="22"/></tab_sql></sqlb_project>
+  FirstName = 'Robert'  */
+-- 9. Get FIRST_NAME from employee table after removing white spaces from right side
+SELECT
+  rtrim(FirstName) AS [Whitout white Space]
+FROM 
+  Employee</sql><current_tab id="22"/></tab_sql></sqlb_project>
