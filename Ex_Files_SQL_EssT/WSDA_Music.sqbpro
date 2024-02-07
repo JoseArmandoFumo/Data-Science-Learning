@@ -377,7 +377,26 @@ CREATED DATE: 07.02.2024
 DESCRIPTION: Pratice || Exercises
 */
 --1. Get all employee details from the employee table
+/*
 SELECT
  *
 FROM
-Employee</sql><current_tab id="22"/></tab_sql></sqlb_project>
+Employee */
+--2. Get First_Name,Last_Name from employee 
+SELECT 
+ FirstName,
+ LastName
+FROM
+ Employee
+ORDER BY 
+FirstName
+
+
+
+
+
+
+
+
+
+</sql><current_tab id="22"/></tab_sql></sqlb_project>
