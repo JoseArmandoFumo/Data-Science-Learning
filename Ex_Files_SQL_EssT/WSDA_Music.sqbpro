@@ -387,20 +387,20 @@ FROM
  Employee
 WHERE
  LastName = 'Peacock' 
--- 19. Get employee details from employee table whose employee name are “Nancy” and “Edwards”
+-- 19. Get employee details from employee table whose employee name are “Nancy” and “Steve”
 SELECT
  *
 FROM
  Employee
 WHERE
- FirstName = 'Nancy' AND LastName = 'Edwards' */
--- 20. Get employee details from employee table whose employee name are not “Nancy” and “Edwards”
+ FirstName IN ('Nancy' , 'Steve') 
+-- 20. Get employee details from employee table whose employee name are not “Nancy” and “Steve”
 SELECT
  *
 FROM
  Employee
 WHERE
- FirstName NOT IN ('Nancy','Steve') 
+ FirstName NOT IN ('Nancy','Steve') */
  
   
   
