@@ -174,112 +174,7 @@ FROM
 WHERE
   Country = &quot;USA&quot;
 ORDER BY
- FirstName</sql><sql name="DATAFORMAT">/*
-CREATED BY: Jose A. Fumo
-CREATED DATE: 01.02.2024
-DESCRIPTION: Calculate the ages of all employees
-*/
-SELECT
-  FirstName,
-  LastName,
-  BirthDate,
-  strftime('%Y-%m-%d',Birthdate) AS [BirthDate no TimeCode],
-  strftime('%Y-%m-%d','now') - strftime('%Y-%m-%d', Birthdate) AS Age 
-FROM 
-  Employee
-ORDER BY 
-  FirstName</sql><sql name="AGGREGATE FUNCTIONS">/*
-CREATED BY: Jose A. Fumo
-CREATED DATE: 01.02.2024
-DESCRIPTION: Aggregate function || What are our all time global sales?
-*/
-SELECT 
-  SUM (total) AS [Total Sales],
-  round(AVG(total),2) AS [Avarage Sales],
-  MAX(total) AS [Maximum Sale],
-  MIN(total) AS [Minimum Sale],
-  COUNT(*) AS [Count Sales]
-FROM 
-  Invoice</sql><sql name="EXERCISES AGGREGATE">/*
-CREATED BY: Jose A. Fumo
-CREATED DATE: 01.02.2024
-DESCRIPTION: EXERCISES AGGREGATE FUNCTIONS
-*/
-
-SELECT 
-/*  MAX(unitPrice) As [Maximum price],
-  MIN (UnitPrice) AS [Minimum Price] */
---  COUNT(CustomerId) AS [Total Customers],
-  --SUM(total) AS [Total sales]
---AVG(strftime('%Y-%m-%d','now') - strftime('%Y-%m-%d',Birthdate)) AS [AVERAG Age]
-CustomerId,
-SUM(total) AS [Total  sales]
-
-FROM 
-  Invoice
- group by CustomerId</sql><sql name="Group by">/*
-CREATED BY: Jose A. Fumo
-CREATED DATE: 06.02.2024
-DESCRIPTION: Grouping in SQL | What are the average total by cities?
-*/
-
-SELECT
-  BillingCity,
- round(avg (total),2) AS [Average Total]
-FROM
- Invoice
-GROUP BY
-  BillingCity</sql><sql name="Group by with Where">/*
-CREATED BY: Jose A. Fumo
-CREATED DATE: 06.02.2024
-DESCRIPTION: Grouping in SQL | What are the average total by city for only the cities that starts with L?
-*/
-
-SELECT
- BillingCity,
-round(avg(total),2) AS [Average Total]
- 
-FROM
-  Invoice
-WHERE
-  BillingCity LIKE 'L%'
-GROUP BY
-  BillingCity
-</sql><sql name="Group by with Having">/*
-CREATED BY: Jose A. Fumo
-CREATED DATE: 06.02.2024
-DESCRIPTION: HAVING in SQL | What are the average invoice totals greater than $5.00?
-*/
-SELECT
-  BillingCity,
-  round(avg(total),2) AS [Average Total]
-FROM
-  Invoice
-GROUP BY
-  BillingCity
- HAVING
-   avg(total) &gt; 5.00
- ORDER BY
-   BillingCity
-</sql><sql name="Group by with having and Where">/*
-CREATED BY: Jose A. Fumo
-CREATED DATE: 06.02.2024
-DESCRIPTION: HAVING in SQL | What are the average invoice totals greater than $5.00 for cities that starts with B?
-*/
-
-SELECT
-  BillingCity,
-  round(avg(total),2) AS [Average Total]
-FROM
-  Invoice
-WHERE 
-  BillingCity LIKE 'B%'
-GROUP BY
-  BillingCity
-HAVING
-  avg(total) &gt; 5.0
-ORDER BY
-  BillingCity</sql><sql name="Group by with two fields">/*
+ FirstName</sql><sql name="Group by with two fields">/*
 CREATED BY: Jose A. Fumo
 CREATED DATE: 06.02.2024
 DESCRIPTION: Grouping By in more than one field at time | What are the average invoice totals by billing Country and cities?
@@ -451,10 +346,16 @@ ORDER BY
 FROM 
  Employee
 WHERE 
-  FirstName= 'Robert'  */
+  FirstName= 'Robert'  
 --13. Get First_Name and Last_Name as single column from employee table separated by a '_'
 SELECT 
-  FirstName | ' '|  LastName AS [Full Name]
+  FirstName || ' '||  LastName AS [Full Name]
 FROM 
-  Employee
-  </sql><current_tab id="22"/></tab_sql></sqlb_project>
+  Employee */
+--14. Get FIRST_NAME ,Joining year,Joining Month and Joining Date from employee table
+SELECT 
+ FirstName,
+ strftime('%Y- %m - %d', birthdate) AS [Birthdate]
+FROM 
+ Employee
+  </sql><current_tab id="15"/></tab_sql></sqlb_project>
