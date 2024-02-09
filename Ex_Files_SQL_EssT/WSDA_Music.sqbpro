@@ -379,14 +379,21 @@ SELECT
 FROM 
  Employee
 ORDER BY 
- FirstName ASC, LastName DESC */
+ FirstName ASC, LastName DESC 
 -- 18. Get employee details from employee table whose employee name is “Peacock”
 SELECT
   *
 FROM 
  Employee
 WHERE
- LastName = 'Peacock'
+ LastName = 'Peacock' */
+-- 19. Get employee details from employee table whose employee name are “Nancy” and “Edwards”
+SELECT
+ *
+FROM
+ Employee
+WHERE
+ FirstName = 'Nancy' AND LastName = 'Edwards'
   
   
   
