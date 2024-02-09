@@ -371,77 +371,85 @@ NOT IN
 FROM 
  InvoiceLine
 ORDER BY
- TrackId)</sql><sql name="SQL 24">/*
-CREATED BY: Jose A. Fumo
-CREATED DATE: 07.02.2024
-DESCRIPTION: Pratice || Exercises
-*/
---1. Get all employee details from the employee table
-/*
-SELECT
- *
-FROM
-Employee 
---2. Get First_Name,Last_Name from employee 
-SELECT 
- FirstName,
- LastName
-FROM
- Employee
-ORDER BY 
-FirstName   
--- 3. Get First_Name from employee table using alias name “Employee Name”
-SELECT 
- FirstName AS [Employee Name]
-FROM
- Employee 
- -- 4. Get First_Name from employee table in upper case
- SELECT 
-   upper (FirstName)
-  FROM 
-   Employee
-ORDER BY 
- FirstName  
---5. Get First_Name from employee table in lower case
- SELECT
-   lower(FirstName) AS [Name in Lower Case]
- FROM 
-   Employee  
---6. Get unique DEPARTMENT from employee table
-SELECT 
-	DISTINCT
-	Title
- FROM Employee 
--- 7. Select first 3 characters of FIRST_NAME from EMPLOYEE
-SELECT
-  substr(firstname, 1, 3)
+ TrackId)</sql><sql name="EXERCISES">/*
+CREATED BY: Jose A. Fumo
+CREATED DATE: 07.02.2024
+DESCRIPTION: Pratice || Exercises
+*/
+--1. Get all employee details from the employee table
+/*
+SELECT
+ *
+FROM
+Employee 
+--2. Get First_Name,Last_Name from employee 
+SELECT 
+ FirstName,
+ LastName
+FROM
+ Employee
+ORDER BY 
+FirstName   
+-- 3. Get First_Name from employee table using alias name “Employee Name”
+SELECT 
+ FirstName AS [Employee Name]
+FROM
+ Employee 
+ -- 4. Get First_Name from employee table in upper case
+ SELECT 
+   upper (FirstName)
+  FROM 
+   Employee
+ORDER BY 
+ FirstName  
+--5. Get First_Name from employee table in lower case
+ SELECT
+   lower(FirstName) AS [Name in Lower Case]
+ FROM 
+   Employee  
+--6. Get unique DEPARTMENT from employee table
+SELECT 
+	DISTINCT
+	Title
+ FROM Employee 
+-- 7. Select first 3 characters of FIRST_NAME from EMPLOYEE
+SELECT
+  substr(firstname, 1, 3)
+FROM 
+ Employee 
+-- 8. Get position of 'o' in name 'Robert' from employee table 
+SELECT
+ FirstName,
+ instr (FirstName, 'o') As [Position]
+FROM
+Employee
+WHERE
+  FirstName = 'Robert'  
+-- 9. Get FIRST_NAME from employee table after removing white spaces from right side
+SELECT
+  rtrim(FirstName) AS [Whitout white Space]
+FROM 
+  Employee  
+--10. Get FIRST_NAME from employee table after removing white spaces from left side
+SELECT
+  ltrim (FirstName) AS [WITHOUT LTRIM]
+FROM
+  Employee
+ORDER BY 
+ FirstName  
+ --11. Get length of FIRST_NAME from employee table
+SELECT
+ FirstName,
+ length(firstname) AS [Lenght of First Name]
+FROM
+ Employee
+ORDER BY 
+  FirstName */
+  --12. Get First_Name from employee table after replacing 'o' with '$'
+  SELECT
+    replace (FirstName, 'o','$')
 FROM 
- Employee 
--- 8. Get position of 'o' in name 'Robert' from employee table 
-SELECT
- FirstName,
- instr (FirstName, 'o') As [Position]
-FROM
-Employee
-WHERE
-  FirstName = 'Robert'  
--- 9. Get FIRST_NAME from employee table after removing white spaces from right side
-SELECT
-  rtrim(FirstName) AS [Whitout white Space]
-FROM 
-  Employee  
---10. Get FIRST_NAME from employee table after removing white spaces from left side
-SELECT
-  ltrim (FirstName) AS [WITHOUT LTRIM]
-FROM
-  Employee
-ORDER BY 
- FirstName  */
- --11. Get length of FIRST_NAME from employee table
-SELECT
- FirstName,
- length(firstname) AS [Lenght of First Name]
-FROM
  Employee
-ORDER BY 
-  FirstName</sql><current_tab id="22"/></tab_sql></sqlb_project>
+WHERE 
+  FirstName= 'Robert'
+  </sql><current_tab id="22"/></tab_sql></sqlb_project>
