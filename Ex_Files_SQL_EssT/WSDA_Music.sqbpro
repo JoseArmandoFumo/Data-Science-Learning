@@ -365,11 +365,29 @@ SELECT
 FROM 
   Employee
 ORDER BY
- FirstName ASC  */
+ FirstName ASC  
  --16. Get all employee details from the employee table order by First_Name Descending
 SELECT
  *
 FROM 
   Employee
 ORDER BY
-  FirstName DESC</sql><current_tab id="15"/></tab_sql></sqlb_project>
+  FirstName DESC */
+ --17. Get all employee details from the employee table order by First_Name Ascending and LastName descending 
+SELECT
+  *
+FROM 
+ Employee
+ORDER BY 
+ FirstName ASC, LastName DESC
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  </sql><current_tab id="15"/></tab_sql></sqlb_project>
