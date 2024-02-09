@@ -372,15 +372,21 @@ SELECT
 FROM 
   Employee
 ORDER BY
-  FirstName DESC */
+  FirstName DESC 
  --17. Get all employee details from the employee table order by First_Name Ascending and LastName descending 
 SELECT
   *
 FROM 
  Employee
 ORDER BY 
- FirstName ASC, LastName DESC
-  
+ FirstName ASC, LastName DESC */
+-- 18. Get employee details from employee table whose employee name is “Peacock”
+SELECT
+  *
+FROM 
+ Employee
+WHERE
+ LastName = 'Peacock'
   
   
   
