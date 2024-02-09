@@ -444,12 +444,17 @@ SELECT
 FROM
  Employee
 ORDER BY 
-  FirstName */
+  FirstName 
   --12. Get First_Name from employee table after replacing 'o' with '$'
   SELECT
     replace (FirstName, 'o','$')
 FROM 
  Employee
 WHERE 
-  FirstName= 'Robert'
+  FirstName= 'Robert'  */
+--13. Get First_Name and Last_Name as single column from employee table separated by a '_'
+SELECT 
+  FirstName | ' '|  LastName AS [Full Name]
+FROM 
+  Employee
   </sql><current_tab id="22"/></tab_sql></sqlb_project>
