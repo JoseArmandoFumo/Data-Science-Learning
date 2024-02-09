@@ -400,7 +400,8 @@ SELECT
 FROM
  Employee
 WHERE
- FirstName != 'Nancy' AND LastName != 'Edwards'
+ FirstName NOT IN ('Nancy','Steve') 
+ 
   
   
   
