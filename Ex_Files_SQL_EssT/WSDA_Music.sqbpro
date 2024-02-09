@@ -358,11 +358,18 @@ SELECT
  strftime('%Y- %m - %d', birthdate) AS [Birthdate]
 FROM 
  Employee  
- Database SQL Queries &quot;SQL Order By&quot; */
+ Database SQL Queries &quot;SQL Order By&quot; 
 --15. Get all employee details from the employee table order by First_Name Ascending
 SELECT  
  *
 FROM 
   Employee
 ORDER BY
- FirstName ASC</sql><current_tab id="15"/></tab_sql></sqlb_project>
+ FirstName ASC  */
+ --16. Get all employee details from the employee table order by First_Name Descending
+SELECT
+ *
+FROM 
+  Employee
+ORDER BY
+  FirstName DESC</sql><current_tab id="15"/></tab_sql></sqlb_project>
