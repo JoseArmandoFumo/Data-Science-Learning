@@ -386,15 +386,21 @@ SELECT
 FROM 
  Employee
 WHERE
- LastName = 'Peacock' */
+ LastName = 'Peacock' 
 -- 19. Get employee details from employee table whose employee name are “Nancy” and “Edwards”
 SELECT
  *
 FROM
  Employee
 WHERE
- FirstName = 'Nancy' AND LastName = 'Edwards'
-  
+ FirstName = 'Nancy' AND LastName = 'Edwards' */
+-- 20. Get employee details from employee table whose employee name are not “Nancy” and “Edwards”
+SELECT
+ *
+FROM
+ Employee
+WHERE
+ FirstName != 'Nancy' AND LastName != 'Edwards'
   
   
   
