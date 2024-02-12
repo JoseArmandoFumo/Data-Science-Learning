@@ -428,14 +428,21 @@ SELECT
 FROM
   Employee
 WHERE
-  FirstName LIKE '_____w' */
+  FirstName LIKE '_____w' 
 -- 25. Get employee details from employee table whose first name starts with 'J' and name contains 4 letters
 SELECT
  *
 FROM 
   Employee
 WHERE
-  FirstName LIKE 'J___'
+  FirstName LIKE 'J___' */
+-- 29. Get employee details from employee table whose name is 'Laura' and 'Steve'
+SELECT 
+  *
+FROM 
+  Employee
+WHERE
+  FirstName in ('Laura','Steve')
   
   
   
