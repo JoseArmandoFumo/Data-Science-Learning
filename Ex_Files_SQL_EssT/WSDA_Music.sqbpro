@@ -407,14 +407,21 @@ SELECT
 FROM 
  Employee
 WHERE 
- FirstName like 'J%' */
+ FirstName like 'J%' 
 --22. Get employee details from employee table whose first name contains 'o'
 SELECT 
   *
 FROM
   Employee
 WHERE	
-  FirstName LIKE '%o%'
+  FirstName LIKE '%o%' */
+-- 23. Get employee details from employee table whose first name ends with 'w'
+SELECT
+  *
+FROM 
+  Employee
+WHERE
+  FirstName like '%w'
   
   
   
