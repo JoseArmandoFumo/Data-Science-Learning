@@ -107,35 +107,6 @@ FROM
 WHERE PurchaseType = 'Top Performer'
 ORDER BY
  BillingCity	
-</sql><sql name="multipliTable">/*
-CREATED BY: Jose A. Fumo
-CREATED DATE: 29.01.24
-WSDA Music: Sales Goal
-They want as many Customers as possible to spend BETWEEN $7.00 and $15.00
-*/
-SELECT
-  e.FirstName,
-  e.LastName,
-  e.EmployeeId,
-  c.FirstName,
-  c.LastName,
-  c.SupportRepId,
-  i.CustomerId,
-  i.total
-FROM 
-  Invoice as i
-INNER JOIN
-  Customer as c
-ON 
-  i.CustomerId = c.CustomerId
-INNER JOIN
-  Employee as e
-ON 
-  c.SupportRepId = e.EmployeeId
-ORDER BY 
-  i.total
-LIMIT 10
-  
 </sql><sql name="SQL 12">/*
 CREATED BY: Jose A. Fumo
 CREATED DATE: 30.01.24
@@ -401,52 +372,60 @@ FROM
  Employee
 WHERE
  FirstName NOT IN ('Nancy','Steve') 
--- 21. Get employee details from employee table whose first name starts with 'J'
-SELECT
- *
-FROM 
- Employee
-WHERE 
- FirstName like 'J%' 
---22. Get employee details from employee table whose first name contains 'o'
-SELECT 
-  *
-FROM
-  Employee
-WHERE	
-  FirstName LIKE '%o%' 
--- 23. Get employee details from employee table whose first name ends with 'w'
-SELECT
-  *
-FROM 
-  Employee
-WHERE
-  FirstName like '%w' 
+-- 21. Get employee details from employee table whose first name starts with 'J'
+SELECT
+ *
+FROM 
+ Employee
+WHERE 
+ FirstName like 'J%' 
+--22. Get employee details from employee table whose first name contains 'o'
+SELECT 
+  *
+FROM
+  Employee
+WHERE	
+  FirstName LIKE '%o%' 
+-- 23. Get employee details from employee table whose first name ends with 'w'
+SELECT
+  *
+FROM 
+  Employee
+WHERE
+  FirstName like '%w' 
 --24. Get employee details from employee table whose first name ends with 'W' and name contains 5 letters
-SELECT
- * 
-FROM
-  Employee
-WHERE
-  FirstName LIKE '_____w' 
+SELECT
+ * 
+FROM
+  Employee
+WHERE
+  FirstName LIKE '_____w' 
 -- 25. Get employee details from employee table whose first name starts with 'J' and name contains 4 letters
-SELECT
- *
-FROM 
-  Employee
+SELECT
+ *
+FROM 
+  Employee
+WHERE
+  FirstName LIKE 'J___' 
+-- 29. Get employee details from employee table whose name is 'Laura' and 'Steve'
+SELECT 
+  *
+FROM 
+  Employee
+WHERE
+  FirstName in ('Laura','Steve') */
+-- 30. Get employee details from employee table whose joining year is “2003”
+SELECT
+  *
+FROM
+  Employee
 WHERE
-  FirstName LIKE 'J___' */
--- 29. Get employee details from employee table whose name is 'Laura' and 'Steve'
-SELECT 
-  *
-FROM 
-  Employee
-WHERE
-  FirstName in ('Laura','Steve')
+   strftime('%Y',HireDate) = '2003' 
   
   
   
   
   
   
-  </sql><current_tab id="15"/></tab_sql></sqlb_project>
+  
+  </sql><current_tab id="14"/></tab_sql></sqlb_project>
