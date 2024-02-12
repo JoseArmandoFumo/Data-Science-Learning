@@ -420,18 +420,18 @@ SELECT
 FROM
   Employee
 WHERE
-   strftime('%Y',HireDate) = '2003' */
+   strftime('%Y',HireDate) = '2003' 
 -- 31. Get employee details from employee table whose joining month is “January”
 SELECT
   *
 FROM
   Employee
 WHERE
-  strftime ('%m',HireDate) = '01' 
-  
-  
-  
-  
-  
-  
-  </sql><current_tab id="14"/></tab_sql></sqlb_project>
+  strftime ('%m',HireDate) = '01'  */
+-- 32. Get employee details from employee table who joined before January 2nd 2004
+SELECT
+  *
+FROM
+  Employee
+WHERE
+  strftime('%Y-%m-%d', HireDate) &lt; '2004'</sql><current_tab id="14"/></tab_sql></sqlb_project>
