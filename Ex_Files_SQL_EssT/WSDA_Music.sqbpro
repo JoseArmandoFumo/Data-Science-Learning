@@ -400,14 +400,21 @@ SELECT
 FROM
  Employee
 WHERE
- FirstName NOT IN ('Nancy','Steve') */
+ FirstName NOT IN ('Nancy','Steve') 
 -- 21. Get employee details from employee table whose first name starts with 'J'
 SELECT
  *
 FROM 
  Employee
 WHERE 
- FirstName like 'J%'
+ FirstName like 'J%' */
+--22. Get employee details from employee table whose first name contains 'o'
+SELECT 
+  *
+FROM
+  Employee
+WHERE	
+  FirstName LIKE '%o%'
   
   
   
