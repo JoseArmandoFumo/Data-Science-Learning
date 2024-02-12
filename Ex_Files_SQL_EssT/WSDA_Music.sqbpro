@@ -413,15 +413,21 @@ SELECT
 FROM 
   Employee
 WHERE
-  FirstName in ('Laura','Steve') */
+  FirstName in ('Laura','Steve') 
 -- 30. Get employee details from employee table whose joining year is “2003”
 SELECT
   *
 FROM
   Employee
 WHERE
-   strftime('%Y',HireDate) = '2003' 
-  
+   strftime('%Y',HireDate) = '2003' */
+-- 31. Get employee details from employee table whose joining month is “January”
+SELECT
+  *
+FROM
+  Employee
+WHERE
+  strftime ('%m',HireDate) = '01' 
   
   
   
