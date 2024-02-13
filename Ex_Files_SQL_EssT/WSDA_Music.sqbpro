@@ -465,7 +465,7 @@ FROM
 GROUP BY
   BillingCountry
 ORDER BY
-  total DESC */
+  total DESC 
 -- 49. Select name, AlbumId and composer from genre genre table for those Track have Milliseconds less than 2000
 SELECT 
   t.Name,
@@ -479,8 +479,19 @@ INNER JOIN
 ON 
  t.GenreId = g.GenreId
 WHERE 
- t.Milliseconds &lt; 2000
-
+ t.Milliseconds &lt; 2000 */
+-- 50. Select name, AlbumId and composer from genre genre table 
+SELECT 
+  t.Name,
+  t.AlbumId,
+  g.Name AS [Genre Name],
+  t.Composer
+FROM 
+  Track t
+LEFT JOIN
+  Genre g
+ON 
+  t.GenreId = g.GenreId
 
 
 
