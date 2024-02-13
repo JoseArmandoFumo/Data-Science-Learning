@@ -479,7 +479,7 @@ INNER JOIN
 ON 
  t.GenreId = g.GenreId
 WHERE 
- t.Milliseconds &lt; 2000 */
+ t.Milliseconds &lt; 2000 
 -- 50. Select name, AlbumId and composer from genre genre table 
 SELECT 
   t.Name,
@@ -491,8 +491,15 @@ FROM
 LEFT JOIN
   Genre g
 ON 
-  t.GenreId = g.GenreId
-
-
+  t.GenreId = g.GenreId  */
+--55. Select TOP 2 Invoice from Invoice table
+SELECT 
+  *
+FROM 
+  Invoice
+ORDER BY
+ total DESC
+LIMIT 
+  2
 
 </sql><current_tab id="14"/></tab_sql></sqlb_project>
