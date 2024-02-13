@@ -434,7 +434,7 @@ SELECT
 FROM
   Employee
 WHERE
-  strftime('%Y-%m-%d', HireDate) &lt; '2004' */
+  strftime('%Y-%m-%d', HireDate) &lt; '2004' 
 -- 41. Get department,total salary with respect to a department from employee table.
 SELECT 
  FirstName,
@@ -443,5 +443,15 @@ SELECT
 FROM 
   Employee
 GROUP BY
-  Title
- </sql><current_tab id="14"/></tab_sql></sqlb_project>
+  Title */
+-- 42. Get BillingCity, BillingCountry and total  from Invoice table order by total descending
+SELECT 
+  BillingCity,
+  BillingCountry,
+  round(avg (total),2) AS [Total]
+FROM 
+  Invoice 
+GROUP BY 
+  BillingCountry 
+ORDER BY 
+  total DESC</sql><current_tab id="14"/></tab_sql></sqlb_project>
