@@ -466,7 +466,7 @@ GROUP BY
   BillingCountry
 ORDER BY
   total DESC */
--- 49. Select name, AlbumId and composer from genre genre table for those employees who have incentives
+-- 49. Select name, AlbumId and composer from genre genre table for those Track have Milliseconds less than 2000
 SELECT 
   t.Name,
   t.AlbumId,
@@ -478,7 +478,8 @@ INNER JOIN
   Genre g
 ON 
  t.GenreId = g.GenreId
-
+WHERE 
+ t.Milliseconds &lt; 2000
 
 
 
