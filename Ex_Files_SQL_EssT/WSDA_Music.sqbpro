@@ -548,4 +548,13 @@ UPDATE
   Artist
 SET Name = 'Damien Marley'
 WHERE 
- ArtistId = 276</sql><current_tab id="18"/></tab_sql></sqlb_project>
+ ArtistId = 276</sql><sql name="DELETE">/*
+CREATED BY: Jose A. Fumo
+CREATED DATE: 22.02.2024
+DESCRIPTION: Data Manipulation Language (DML) - DELETING DATA
+*/
+DELETE FROM 
+ Artist
+WHERE
+ ArtistId = 277
+</sql><current_tab id="19"/></tab_sql></sqlb_project>
