@@ -513,10 +513,10 @@ CREATE VIEW V_avgTotal AS
 SELECT 
   round (avg(total),2) as [AVERAGE TOTAL]
 FROM 
-  Invoice</sql><sql name="SQL 19">/*
+  Invoice</sql><sql name="Joining_Views">/*
 CREATED BY: Jose A. Fumo
-CREATED DATE: 13.02.2024
-DESCRIPTION: Joining and Views
+CREATED DATE: 22.02.2024
+DESCRIPTION: Joining in a View
 */
 CREATE VIEW V_Tracks_InvoiceLine AS
 SELECT 
@@ -525,7 +525,7 @@ SELECT
   il.Quantity,
   t.Name,
   t.Composer,
-  t.Milliseconds
+  t.Milliseconds
   
 FROM 
  InvoiceLine il 
